@@ -22,6 +22,8 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 import schedule
+import faulthandler
+faulthandler.enable()  # Enable detailed crash reports for debugging    
 
 # ── Ensure project root is on the path (fixes Windows ModuleNotFoundError) ────
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
