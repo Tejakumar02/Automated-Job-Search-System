@@ -1,0 +1,23 @@
+# ============================================================
+#  Job Search Assistant — Python Dependencies
+#  Install: pip install -r requirements.txt
+# ============================================================
+
+# Job scraping
+python-jobspy>=0.1.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Scheduling
+schedule>=1.2.0
+
+# Config & utilities
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+
+# Data processing
+pandas>=2.0.0
+
+# Markdown to PDF/DOCX (pandoc handles actual export)
+markdown>=3.5.0

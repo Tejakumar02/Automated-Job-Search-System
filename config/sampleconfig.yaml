@@ -1,0 +1,105 @@
+# ============================================================
+#  Job Search Assistant — Configuration
+# ============================================================
+
+candidate:
+  name: "Your Name"
+  location: "Chennai, India"
+  experience_years: 0
+  skills:
+    - Python
+    - Machine Learning
+    - Deep Learning
+    - Computer Vision
+    - Artificial Intelligence
+    - Data Science
+    - Automation
+    - TensorFlow
+    - PyTorch
+    - OpenCV
+    - Scikit-learn
+    - Pandas
+    - NumPy
+
+target_roles:
+  - "Graduate Trainee"
+  - "AI Engineer"
+  - "ML Engineer"
+  - "Machine Learning Engineer"
+  - "Computer Vision Engineer"
+  - "Deep Learning Engineer"
+  - "Python Developer"
+  - "Automation Engineer"
+  - "Data Scientist"
+  - "AI/ML Engineer"
+
+job_search:
+  results_per_site: 30
+  location: "Chennai, India"
+  country: "India"
+  # Run twice daily at these times (IST = UTC+5:30)
+  schedule_times:
+    - "12:00"   # 12:00 PM IST
+    - "20:00"   # 08:00 PM IST
+
+filtering:
+  # Keywords that MUST be present (fresher-friendly)
+  include_keywords:
+    - fresher
+    - entry level
+    - entry-level
+    - junior
+    - associate
+    - "0-1 years"
+    - "0-2 years"
+    - "0 years"
+    - trainee
+    - graduate
+    - intern
+  # Keywords that EXCLUDE a job
+  exclude_keywords:
+    - senior
+    - lead
+    - manager
+    - director
+    - "5+ years"
+    - "5 years"
+    - "6+ years"
+    - "7+ years"
+    - "8+ years"
+    - "10+ years"
+    - principal
+    - architect
+    - head of
+  min_score: 40          # Minimum score (0–100) to keep a job
+  top_n: 15              # Return top N jobs per run
+
+scoring:
+  skill_match_weight: 50      # % weight for skill match
+  title_match_weight: 30      # % weight for title relevance
+  recency_weight: 20          # % weight for how recent the job is
+
+ollama:
+  model: "llama3.1"           # or "qwen2.5" — must be pulled locally
+  base_url: "http://localhost:11434"
+  timeout: 120
+
+notifications:
+  telegram:
+    enabled: true
+    bot_token: "YOUR_TELEGRAM_BOT_TOKEN"   # From @BotFather
+    chat_id: "YOUR_CHAT_ID"                # From @userinfobot
+  email:
+    enabled: true
+    smtp_host: "smtp.gmail.com"
+    smtp_port: 587
+    sender: "your_email@gmail.com"
+    password: "YOUR_APP_PASSWORD"          # Gmail App Password
+    recipient: "your_email@gmail.com"
+
+database:
+  path: "data/jobs.db"
+
+resumes:
+  master_resume: "resumes/master_resume.md"
+  output_dir: "resumes/output"
