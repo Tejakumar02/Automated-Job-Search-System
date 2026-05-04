@@ -125,11 +125,13 @@ ollama pull qwen2.5
 ```
 
 ---
-## for creating logs and DB (if this miss setup this way, change directory based on your Device)
-
+## create logs and DB (if they are missing, setup them up, Adjust the directory based on your Device)
+```
 mkdir "D:\Automated Job Search System\logs"
 mkdir "D:\Automated Job Search System\data"
 mkdir "D:\Automated Job Search System\resumes\output"
+
+```
 
 ## 🔧 Configuration
 

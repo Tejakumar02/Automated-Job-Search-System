@@ -4,3 +4,4 @@ config/config.yaml
 /modules/__pycache__/
 data/jobs.db
 logs/job_assistant.log    
+resumes/output
