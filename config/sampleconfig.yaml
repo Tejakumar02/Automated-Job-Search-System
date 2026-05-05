@@ -35,7 +35,12 @@ target_roles:
 
 job_search:
   results_per_site: 30
-  location: "Chennai, India"
+  locations: 
+  - "Chennai, India"
+  - "Bangalore, India"
+  - "Hyderabad, India"
+  - "Remote, India"
+  - "Bengaluru, India"
   country: "India"
   # Run twice daily at these times (IST = UTC+5:30)
   schedule_times:

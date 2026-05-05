@@ -138,14 +138,19 @@ def run_full_scrape() -> list[dict]:
     all_jobs = []
     seen_urls = set()
 
+    locations = cfg["job_search"].get("locations", [location])
+
     for role in roles:
-        # Main scraper (LinkedIn, Indeed, Glassdoor, Google)
-        jobs = scrape_jobs(role, location, results=n)
-        time.sleep(2)   # Polite delay between requests
+        for loc in locations:
+            # Main scraper (LinkedIn, Indeed, Glassdoor, Google)
+            jobs = scrape_jobs(role, loc, results=n)
+            time.sleep(2)   # Polite delay between requests
 
         # Naukri supplemental
-        naukri_jobs = scrape_naukri(role, location="chennai")
-        time.sleep(1)
+        naukri_locations=["Chennai", "Bangalore", "Hyderabad", "Remote", "Bengaluru"]
+        for nloc in naukri_locations:
+            naukri_jobs = scrape_naukri(role, location=nloc)
+            time.sleep(1)
 
         for job in jobs + naukri_jobs:
             url = job.get("url", "")
