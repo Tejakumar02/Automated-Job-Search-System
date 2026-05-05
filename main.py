@@ -96,14 +96,14 @@ def run_pipeline():
     log.info("🤖 Step 4/5 — Tailoring resumes with Ollama LLM...")
     jobs_to_notify = get_unnotified_jobs(limit=15)
 
-    for job in jobs_to_notify:
-        try:
-            resume_paths = process_job_resume(job)
-            if resume_paths.get("pdf"):
-                update_status(job["id"], "new", resume_paths.get("pdf"))
-                log.info(f"   ✅ Resume ready for: {job['title']} @ {job['company']}")
-        except Exception as e:
-            log.warning(f"   ⚠️  Resume tailor failed for {job['title']}: {e}")
+    # for job in jobs_to_notify:
+    #     try:
+    #         resume_paths = process_job_resume(job)
+    #         if resume_paths.get("pdf"):
+    #             update_status(job["id"], "new", resume_paths.get("pdf"))
+    #             log.info(f"   ✅ Resume ready for: {job['title']} @ {job['company']}")
+    #     except Exception as e:
+    #         log.warning(f"   ⚠️  Resume tailor failed for {job['title']}: {e}")
 
     # Step 5: Notify ────────────────────────────────────────────────
     log.info("📬 Step 5/5 — Sending notifications...")

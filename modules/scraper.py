@@ -132,13 +132,13 @@ def run_full_scrape() -> list[dict]:
     """
     cfg = load_config()
     roles    = cfg["target_roles"]
-    location = cfg["job_search"]["location"]
+    locations = cfg["job_search"].get("locations",["Chennai, India", "Bangalore, India", "Hyderabad, India", "Remote India", "Bengaluru, India"])
     n        = cfg["job_search"]["results_per_site"]
 
     all_jobs = []
     seen_urls = set()
 
-    locations = cfg["job_search"].get("locations", [location])
+    
 
     for role in roles:
         for loc in locations:
